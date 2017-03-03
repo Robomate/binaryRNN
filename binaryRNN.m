@@ -433,41 +433,18 @@ ylabel('test accuracy in %')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %mkdir data
-cd data
 
 %struct for weights:
 f1= 'synapse_0'; f2= 'synapse_1'; f3= 'synapse_h';
 
-%export weights to mat file: 
+%uncomment line below: to export weights to mat file: 
 save(['bin_RNNweights_',num2str(epochs),'_',num2str(rel_acc_OK,2),'.mat'],f1,f2,f3)
-
-
-
-% export weights to csv file:
-% modelweightsUVW = [synapse_0,synapse_1,synapse_h];
-% dlmwrite(['bin_RNNweights_',num2str(epochs),'_',num2str(rel_acc_OK,2),'.dat'],synapse_0)
-% 
-%     fid = fopen('binRNN.dat','w');
-%     header = wname{1,1};
-%     mtx = weights.synapse_0;
-%     fprintf(fid,'%s\n',header);
-%     dlmwrite('binRNN.dat', mtx, '-append')
-%     
-%     header = wname{2,1};
-%     mtx = weights.synapse_1;
-%     fprintf(fid,'%s\n',header);
-%     dlmwrite('binRNN.dat', mtx, '-append')
-%     
-%     fclose(fid);
-%     dlmwrite('binRNN.dat', mtx, '-append','delimiter', '\t')
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % optional: restore model weights
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%restore from mat file
-restore_modweights = load('bin_RNNweights_5000_0.2.mat')
+%uncomment line below: to restore from mat file
+%restore_modweights = load('your_file_name.mat')
 
-%restore from csv file
-cd ..
